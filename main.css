@@ -269,11 +269,11 @@ section:not(#hero){
     border-radius: 10px;
     overflow: hidden;
 
-    transform: scaleY(1,0);
-    -ms-transform: scale(1,0); /* IE 9 */
-    -webkit-transform: scale(1,0); /* Safari and Chrome */
-    -o-transform: scale(1,0); /* Opera */
-    -moz-transform: scale(1,0); /* Firefox */
+    transform: scaleY(0);
+    -ms-transform: scaleY(0); /* IE 9 */
+    -webkit-transform: scaleY(0); /* Safari and Chrome */
+    -o-transform: scaleY(0); /* Opera */
+    -moz-transform: scaleY(0); /* Firefox */
     transform-origin: center bottom;
 }
 .card p{
@@ -282,10 +282,10 @@ section:not(#hero){
 
 .card:hover .container{
     transform: scaleY(1);
-    -ms-transform: scale(1); /* IE 9 */
-    -webkit-transform: scale(1); /* Safari and Chrome */
-    -o-transform: scale(1); /* Opera */
-    -moz-transform: scale(1); /* Firefox */
+    -ms-transform: scaleY(1); /* IE 9 */
+    -webkit-transform: scaleY(1); /* Safari and Chrome */
+    -o-transform: scaleY(1); /* Opera */
+    -moz-transform: scaleY(1); /* Firefox */
 }
 .card::before{
     content: '';
@@ -296,7 +296,7 @@ section:not(#hero){
     transition: .5s;
 }
 .card:hover::before{
-    scale: 0;
+    visibility: hidden;
 }
 .card article{
     padding: 0px;
