@@ -1,6 +1,7 @@
 :root{
     --aboutme_height: 100vh;
     --projects_height: 100vh;
+    --white: rgb(233, 233, 233)
 }
 *{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -8,10 +9,11 @@
     margin: 0 auto;
     padding: 0;
     scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 p, span{
-    font-size: 1.2em;
-    color: rgb(233, 233, 233);
+    font-size: 1.1em;
+    color: var(--white);
 }
 #mountains{
     position: absolute;
@@ -23,7 +25,7 @@ p, span{
 /*========================= HEADER SECTION =========================*/
 header{
     max-width: 100%;
-    height: 4cm;
+    height: 30vh;
     position: absolute;
     z-index: 100;
     display: flex;
@@ -86,10 +88,14 @@ h2{
     right: 10vw;
     animation: bringh2 2s forwards;
 }
-h3{ font-size: 30px;text-transform: uppercase; font-family: "arial black"; }
+h3{
+    font-size: calc(3em - 1vw);
+    text-transform: uppercase;
+    font-family: "arial black";
+}
 
 strong{ font-size: 6vw; color: #ff7f27; }
-p{
+#aboutme p{
     text-align: justify;
     text-align-last: left;
     width: 100%;
@@ -113,7 +119,6 @@ section:not(#hero){
 .layer > div:not(.sticky){
     max-width: 100vw;
     padding: 0 5vw;
-    border: 3px dotted black;
     z-index: 10;
     padding-bottom: 20vh;
 }
@@ -134,18 +139,36 @@ section:not(#hero){
     color: rgb(223, 83, 113);
 }
 .content button{
+    position: relative;
     margin-top: 2vh;
     background-color: rgba(255, 255, 255, 0.288);
     border: none;
     padding: 5px 10px;
     transition: .5s;
-    border-bottom: 1px solid white;
     cursor: pointer;
+    font-size: 1em;
+}
+.content button::before{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #ff7f27;
+    transform: scaleX(0);
+    transition: .3s;
+}
+.content button:hover::before{
+    transform: scaleX(1);
 }
 .content button:hover{
     background-color: rgba(255, 255, 255, 0.568);
-    border-bottom: 1px solid transparent;
 }
+
+
+
+/* -------------- ABOUT ME --------------- */
 #aboutme{
     border-top: 8px solid #9d0b1a;
     background-color: #ff7f27;
@@ -161,7 +184,7 @@ section:not(#hero){
     shape-outside: circle(50%);
     clip-path: circle(50%);
 }
-.layer img{
+#aboutme img{
     border-radius: 50%;
     object-fit: cover;
     float: right;
@@ -181,6 +204,7 @@ section:not(#hero){
         18% 15%, 28% 8%);
     */
 }
+
 #pfpfigure::after{
     border-radius: 50%;
     box-shadow: inset 3px 3px 10px 0 black;
@@ -194,6 +218,8 @@ section:not(#hero){
     box-shadow: inset -3px -3px 10px 0 black;
 }
 
+
+/* -------------- PROJECTS ---------------- */
 #projects{
     background-color: #FFBC3B;
     background-image: url(./img/bg_projects.png);
@@ -201,6 +227,126 @@ section:not(#hero){
     background-repeat: repeat;
 }
 #projects h3{ color: #ed1c24; }
+
+#projects .content{
+    background: none;
+    box-shadow: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card{
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.card > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    /* filter: blur(10px); */
+    
+}
+.card_info{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(29, 29, 29);
+    transition: .3s;
+    padding: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+
+    transform: scaleY(1,0);
+    -ms-transform: scale(1,0); /* IE 9 */
+    -webkit-transform: scale(1,0); /* Safari and Chrome */
+    -o-transform: scale(1,0); /* Opera */
+    -moz-transform: scale(1,0); /* Firefox */
+    transform-origin: center bottom;
+}
+.card p{
+    font-size: 1em;
+}
+
+.card:hover .container{
+    transform: scaleY(1);
+    -ms-transform: scale(1); /* IE 9 */
+    -webkit-transform: scale(1); /* Safari and Chrome */
+    -o-transform: scale(1); /* Opera */
+    -moz-transform: scale(1); /* Firefox */
+}
+.card::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 40;
+    transition: .5s;
+}
+.card:hover::before{
+    scale: 0;
+}
+.card article{
+    padding: 0px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    height: 100%;
+}
+.card ul{
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    flex-wrap: wrap;
+    list-style: none;
+    height: 100px;
+    width: 100%;
+    background-color: rgb(63, 63, 63);
+    padding: 10px 0 10px 10px;
+    border-radius: 10px;
+}
+.card li{
+    position: relative;
+    color: var(--white);
+    margin: 3px 10px;
+}
+.card li::before{
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background-image: linear-gradient(to left, black, transparent);
+    clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+    opacity: 0;
+    transition: .3s;
+}
+.card li:hover::before{
+    opacity: 1;
+}
+h4{
+    font-size: 2em;
+    color: #ff7f27;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+
+
+/* -------------- CONTACT ----------------- */
 
 #contact{
     border-top: 8px solid #ff7f27;
@@ -210,6 +356,19 @@ section:not(#hero){
     background-repeat: repeat;
 }
 #contact h3{ color: #ff7f27; }
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*========================= STICKY SECTIONS =========================*/
 .sticky{
     width: 100%;
@@ -290,8 +449,39 @@ section:not(#hero){
         height: 31vw;
     }
 }
+@media only screen and (max-width: 375px){
+    .content{
+        width: 100;
+        padding: 0;
+    }
+    #aboutme .content{
+        padding: 10px;
+    }
+    #aboutme p{
+        text-align: left;
+    }
+    #pfpfigure{
+        scale: 0.8;
+    }
+}
 @media only screen and (min-width: 425px){
     #pfpfigure{
         margin-left: 1vw;
+    }
+}
+@media only screen and (min-width: 715px){
+    .card{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+
+@media only screen and (min-width: 2560px){
+    p, span{
+    font-size: 3em;
+    }
+    .content button{
+        font-size: 1.5em;
     }
 }
