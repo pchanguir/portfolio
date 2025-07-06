@@ -269,23 +269,28 @@ section:not(#hero){
     border-radius: 10px;
     overflow: hidden;
 
-    transform: scaleY(0);
-    -ms-transform: scaleY(0); /* IE 9 */
-    -webkit-transform: scaleY(0); /* Safari and Chrome */
-    -o-transform: scaleY(0); /* Opera */
-    -moz-transform: scaleY(0); /* Firefox */
+    transform: rotateX(90deg);
+    -ms-transform: rotateX(90deg); /* IE 9 */
+    -webkit-transform: rotateX(90deg); /* Safari and Chrome */
+    -o-transform: rotateX(90deg); /* Opera */
+    -moz-transform: rotateX(90deg); /* Firefox */
+
     transform-origin: center bottom;
+    -ms-transform-origin: center bottom;
+    -webkit-transform-origin: center bottom;
+    -o-transform-origin: center bottom;
+    -moz-transform-origin: center bottom;
 }
 .card p{
     font-size: 1em;
 }
 
 .card:hover .container{
-    transform: scaleY(1);
-    -ms-transform: scaleY(1); /* IE 9 */
-    -webkit-transform: scaleY(1); /* Safari and Chrome */
-    -o-transform: scaleY(1); /* Opera */
-    -moz-transform: scaleY(1); /* Firefox */
+    transform: rotateX(0deg);
+    -ms-transform: rotateX(0deg); /* IE 9 */
+    -webkit-transform: rotateX(0deg); /* Safari and Chrome */
+    -o-transform: rotateX(0deg); /* Opera */
+    -moz-transform: rotateX(0deg); /* Firefox */
 }
 .card::before{
     content: '';
