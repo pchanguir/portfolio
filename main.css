@@ -1,10 +1,15 @@
 :root{
     --aboutme_height: 100vh;
     --projects_height: 100vh;
-    --white: rgb(233, 233, 233)
+    --white: rgb(233, 233, 233);
+
+    --shadow1: #6b6b6b;
+    --shadow2: #757575;
+    --shadow3: #7c7c7c;
+    --shadow4: #7f7f7f;
 }
 *{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
     margin: 0 auto;
     padding: 0;
@@ -89,6 +94,7 @@ h2{
     animation: bringh2 2s forwards;
 }
 h3{
+    width: 100%;
     font-size: calc(3em - 1vw);
     text-transform: uppercase;
     font-family: "arial black";
@@ -109,7 +115,7 @@ section{
     z-index: 10;
 }
 section:not(#hero){
-    min-height: 100vh;
+    min-height: calc(80vh - 16px);
     justify-content: start;
 }
 #hero{
@@ -128,7 +134,7 @@ section:not(#hero){
     background-color: rgba(0, 0, 0, 0.63);
     height: 100%;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.349);
-    min-height: 300px;
+    min-height: 400px;
 }
 .content a{
     color: rgb(231, 128, 150);
@@ -354,21 +360,139 @@ h4{
 /* -------------- CONTACT ----------------- */
 
 #contact{
+    min-height: 90vh;
     border-top: 8px solid #ff7f27;
     background-color: #FFF94F;
     background-image: url(./img/bg_contact.png);
     background-size: 50%;
     background-repeat: repeat;
 }
-#contact h3{ color: #ff7f27; }
+#contact > div{
+    width: 100%;
+    padding: 0;
+    height: 90vh;
+    display: flex;
+    flex-flow: column;
+    align-items: end;
+}
+#contact h3{ color: #ff7f27; padding-left: 5vw; }
+
+#contact .content{
+    background-color: gray;
+    width: 100%;
+    background-image: url('./img/cavern.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    
+    clip-path: polygon(0% 10%, 10% 5%, 20% 7%, 30% 7%, 40% 0%,
+                        50% 2%, 55% 10%, 62% 8%, 69% 10%, 78% 6%,
+                        85% 5%, 95% 8%, 100% 7%,
+                        100% 0%, 100% 100%, 0% 100%);
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
 
 
 
 
 
+#social{
+    background-color: rgb(92, 92, 92);
+    width: 700px;
+    height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 3vw 2vw;
+}
+
+#social form{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    height: 100%;
+    width: 280px;
+    height: 40vh;
+}
+
+input{
+    width: 100%;
+    border: none;
+    height: 5vh;
+}
+form label{
+    display: none;
+}
+#social form input:not([type=submit]){
+    border-bottom: 2px solid var(--white);
+    background: none;
+    padding: 0 0 0 1vw;
+}
+#social form input::placeholder{
+    color: white;
+    padding-left: 1vw;
+    transition: .3s;
+}
+
+input[type=submit]{
+    background-color: #ff7f27;
+    color: white;
+    border-top: 2px solid #FFBC3B;
+    border-left: 2px solid #FFBC3B;
+    border-bottom: 2px solid #ed1c24;
+    border-right: 2px solid #ed1c24;
+    transition: .3s;
+}
+input[type=submit]:hover{
+    border-top: 2px solid #ed1c24;
+    border-left: 2px solid #ed1c24;
+    border-bottom: 2px solid #FFBC3B;
+    border-right: 2px solid #FFBC3B;
+}
+input[type=submit]:focus{
+    background-color: #ff7f27;
+}
+input:focus, textarea:focus{
+    outline: none;
+    background: none;
+}
+textarea::placeholder{
+    color: black;
+    padding-left: 1vw;
+    transition: .3s;
+}
+textarea{
+    padding: 1vw 1vw 0 1vw;
+}
+textarea:focus::placeholder, #social form input:focus::placeholder{
+    padding-left: 0vw;
+}
+#social form textarea{
+    width: 100%;
+    background-color: var(--white);
+}
 
 
 
+#ct-info{
+    width: 280px;
+    height: 100%;
+}
+
+.info-row{
+    display:flex;
+    justify-content: start;
+    width: 100%;
+    align-items: center;
+}
+.info-row img, .info-row p{
+    margin: 0;
+    font-size: 1em;
+}
+.info-row p{
+    padding-left: 1vw;
+}
 
 
 
