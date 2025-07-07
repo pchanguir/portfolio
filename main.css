@@ -258,6 +258,9 @@ section:not(#hero){
     /* filter: blur(10px); */
     
 }
+.card .fit{
+    object-fit: contain;
+}
 .card_info{
     position: absolute;
     top: 0;
@@ -389,22 +392,49 @@ h4{
                         85% 5%, 95% 8%, 100% 7%,
                         100% 0%, 100% 100%, 0% 100%);
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
+    padding-top: 20vh;
 }
 
 
 
 
+#geologist{
+    height: 60vh;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: end;
+    margin: 0;
+    position: relative;
+}
+#lantern{
+    position: absolute;
+    width: 2.3vh;
+    height: 29.7vh;
+    background-color: black;
+    left: 16vh;
+    clip-path: polygon(0% 6%, 100% 5%, 100% 9%, 0% 8%);
+}
+#geologist img{
+    height: 30vh;
+    filter: invert(5%);
+}
+#light{
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.247), transparent);
+    width: 20vw;
+    height: 100%;
+    clip-path: polygon(0% 53%, 100% 0%, 100% 100%, 0% 54%);
+}
+
 
 #social{
-    background-color: rgb(92, 92, 92);
     width: 700px;
-    height: 50vh;
+    height: 35vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 3vw 2vw;
+    margin: 0;
 }
 
 #social form{
@@ -413,7 +443,6 @@ h4{
     justify-content: space-between;
     height: 100%;
     width: 280px;
-    height: 40vh;
 }
 
 input{
@@ -478,6 +507,9 @@ textarea:focus::placeholder, #social form input:focus::placeholder{
 #ct-info{
     width: 280px;
     height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
 }
 
 .info-row{
@@ -488,11 +520,43 @@ textarea:focus::placeholder, #social form input:focus::placeholder{
 }
 .info-row img, .info-row p{
     margin: 0;
-    font-size: 1em;
+    
 }
 .info-row p{
     padding-left: 1vw;
+    font-size: 1em;
 }
+#social-media{
+    border-top: 2px solid var(--white);
+    border-bottom: 2px solid var(--white);
+    display: flex;
+    padding: 10px 0;
+    width: 90%;
+}
+#social-media img{
+    filter: invert(48%);
+    width: 30px;
+    transition: .5s;
+}
+#social-media img[alt='Instagram']{
+    width: 40px;
+}
+#social-media a{
+    display: flex;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: var(--white);
+    transition: .3s;
+}
+#social-media a:hover img{
+    transform: rotate(360deg);
+    -ms-transform: rotate(360deg); /* IE 9 */
+    -webkit-transform: rotate(360deg); /* Safari and Chrome */
+    -o-transform: rotate(360deg); /* Opera */
+    -moz-transform: rotate(360deg); /* Firefox */
+}
+
 
 
 
