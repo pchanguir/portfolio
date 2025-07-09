@@ -430,7 +430,6 @@ h4{
 
 #social{
     width: 700px;
-    height: 35vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -655,6 +654,11 @@ textarea:focus::placeholder, #social form input:focus::placeholder{
     }
     #pfpfigure{
         scale: 0.8;
+    }
+}
+@media only screen and (max-width: 768px) {
+    #geologist{
+        display: none;
     }
 }
 @media only screen and (min-width: 425px){
