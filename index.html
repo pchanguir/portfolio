@@ -210,13 +210,13 @@
                     <div id="social">
                         <form action="https://api.web3forms.com/submit" method="POST">
                             <input type="hidden" name="access_key" value="01c102bb-3008-4548-a15a-424f6ab57d66">
-                            <input type="text" id="name" placeholder="Name" required>
+                            <input type="text" id="name" name="name" placeholder="Name" required>
                             <label for="name">Name</label>
-                            <input type="email" id="email" placeholder="Email" required>
+                            <input type="email" id="email" name="email" placeholder="Email" required>
                             <label for="email">Email</label>
-                            <textarea name="" id="message" placeholder="Message" rows="5" style="resize: none;" required></textarea>
+                            <textarea name="" id="message" name="message" placeholder="Message" rows="5" style="resize: none;" required></textarea>
                             <label for="message">Message</label>
-                            <input type="submit" value="SEND">
+                            <input type="submit" name="submit" value="SEND">
                         </form>
                         <div id="ct-info">
                             <div id="general">
