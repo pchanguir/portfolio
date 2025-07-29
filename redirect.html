@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank you!</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        main{
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(to bottom right, #3f48cc, #9cdbeb);
+            display: flex;
+            flex-flow: nowrap column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1{
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 5em;
+            text-align: center;
+        }
+        button{
+            position: relative;
+            color: #9d0b1a;
+            font-weight: bold;
+            width: 30vh;
+            height: 6vh;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1em;
+            background: linear-gradient(to right, #ff7f27, #FFF94F);
+            border: none;
+            border-bottom: 2px solid #ff7f27;
+            border-top: 2px solid #FFF94F;
+            letter-spacing: 5px;
+            transition: .4s;
+            box-shadow: -5px -5px 5px #3f48cc;
+        }
+        button::before{
+            position: absolute;
+            content: '';
+            top: 0;
+            bottom: -2px;
+            right: 0;
+            width: 0%;
+            border-bottom: 2px solid #FFF94F;
+            transition: .4s;
+        }
+        button:focus{}
+
+        button:hover{
+            box-shadow: 0 0 0 black;
+            color: #9d0b1ad3;
+        }
+        button:hover::before{
+            width: 100%;
+        }
+        button::after{
+            position: absolute;
+            content: '';
+            top: -2px;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            border-top: 2px solid #ff7f27;
+            transition: .4s;
+        }
+        button:hover::after{
+            width: 100%;
+        }
+        @media only screen and (max-width: 425px) {
+            h1{
+                font-size: 4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Thank you for the message!</h1>
+        <button onclick="go_back()">RETURN</button>
+    </main>
+</body>
+<script>
+    function go_back(){
+        window.location.replace('./index.html')
+    }
+</script>
+</html>
