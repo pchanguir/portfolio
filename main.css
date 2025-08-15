@@ -314,28 +314,14 @@ section:not(#hero){
     padding: 10px;
     overflow: hidden;
 
-    transform: rotateX(90deg);
-    -ms-transform: rotateX(90deg); /* IE 9 */
-    -webkit-transform: rotateX(90deg); /* Safari and Chrome */
-    -o-transform: rotateX(90deg); /* Opera */
-    -moz-transform: rotateX(90deg); /* Firefox */
-
-    transform-origin: center bottom;
-    -ms-transform-origin: center bottom;
-    -webkit-transform-origin: center bottom;
-    -o-transform-origin: center bottom;
-    -moz-transform-origin: center bottom;
+    opacity: 0;
 }
 .card p{
     font-size: 1em;
 }
 
 .card:hover .container{
-    transform: rotateX(0deg);
-    -ms-transform: rotateX(0deg); /* IE 9 */
-    -webkit-transform: rotateX(0deg); /* Safari and Chrome */
-    -o-transform: rotateX(0deg); /* Opera */
-    -moz-transform: rotateX(0deg); /* Firefox */
+    opacity: 1;
 }
 .card::before{
     content: '';
