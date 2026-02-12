@@ -131,9 +131,7 @@ section:not(#hero){
 /* ------------------------------ CONTENT SECTION --------------------------------- */
 .content{
     padding: 3vw;
-    background-color: rgba(0, 0, 0, 0.63);
     height: 100%;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.349);
     min-height: 400px;
 }
 .content a{
@@ -171,7 +169,16 @@ section:not(#hero){
 .content button:hover{
     background-color: rgba(255, 255, 255, 0.568);
 }
-
+#aboutme .content{
+    background-color: rgb(63, 63, 63);
+    border: 10px solid rgb(31, 31, 31);
+    border-radius: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    flex-flow: wrap;
+}
 
 
 /* -------------- ABOUT ME --------------- */
@@ -186,9 +193,12 @@ section:not(#hero){
 #pfpfigure{
     width: 300px;
     height: 300px;
-    float: right;
     shape-outside: circle(50%);
     clip-path: circle(50%);
+    margin: 0;
+}
+#aboutme > div{
+    width: 100%;
 }
 #aboutme img{
     border-radius: 50%;
@@ -211,6 +221,7 @@ section:not(#hero){
     */
 }
 
+
 #pfpfigure::after{
     border-radius: 50%;
     box-shadow: inset 3px 3px 10px 0 black;
@@ -222,6 +233,35 @@ section:not(#hero){
 }
 #pfpfigure:hover::after{
     box-shadow: inset -3px -3px 10px 0 black;
+}
+
+#yearsDiv{
+    background-color: rgb(26, 26, 26);
+    padding: 10px 30px 10px 30px;
+    width: 400px;
+    min-height: 200px;
+    margin: 20px;
+    display: flex;
+    flex-flow: column;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+#yearsDiv div{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+#yearsDiv input{
+    width: 30px;
+    transition: 0.5s;
+}
+#yearsDiv label{
+    color: white;
+    text-align: center;
+    height: 15px;
 }
 
 

@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="./main.css">
     
     <title>Pedro Changuir</title>
+
+    
 </head>
 <body>
     <header>
@@ -40,7 +42,31 @@
                         <img src="./img/profile_pic.jpg" width="300px" height="300px" alt="Profile picture of Pedro Changuir, wearing a blue UV T-shirt">
                     </figure>
                     
-                    <p>Geology undergraduate at <a href="https://ufrj.br" target="_blank">UFRJ (Federal University of Rio de 
+                    <div id="yearsDiv">
+                        <p>Learn about my experiences in the chart!</p>
+                        <div>
+                            <div class="inputDiv">
+                                <input type="radio" class="years" id="yr23" name="year" onchange="drawChart(this.id)">
+                                <label for="yr23">2023</label>
+                            </div>
+                            <div class="inputDiv">
+                                <input type="radio" class="years" id="yr24" name="year" onchange="drawChart(this.id)">
+                                <label for="yr24">2024</label>
+                            </div>
+                            <div class="inputDiv">
+                                <input type="radio" class="years" id="yr25" name="year" onchange="drawChart(this.id)">
+                                <label for="yr25">2025</label>
+                            </div>
+                            <div class="inputDiv">
+                                <input type="radio" class="years" id="yr26" name="year" onchange="drawChart(this.id)">
+                                <label for="yr26">2026</label>
+                            </div>
+                        </div>
+                        
+                        <a href="http://lattes.cnpq.br/6271081753857149" target="_blank"><button>Access my CV</button></a>
+                    </div>
+                    <div id="donutchart" style="width: 300px; height: 300px; margin: 0"></div>
+                    <!-- <p>Geology undergraduate at <a href="https://ufrj.br" target="_blank">UFRJ (Federal University of Rio de 
                         Janeiro)</a>. Currently: a Scientific Initiation fellow at the <a href="https://lmct.online/equipe/" target="_blank">Technological Characterization Sector of the 
                         Mineral Technology Center (SCT/CETEM)</a> since August 2023; member of the database team of the AAPG-UFRJ Student Chapter since April 2024; teaching assistant 
                         for Structural Geology II since February 2024. In 2023, held a scholarship as a teaching assistant at the UFRJ 
@@ -48,7 +74,7 @@
                         Python and JavaScript, and analytical techniques such as Raman spectroscopy and scanning electron microscopy 
                         with energy-dispersive spectroscopy (SEM-EDS).<br><br>Main interests include: Mineralogical characterization of ores, 
                         Mineralogy, Geochemistry, Structural Geology, and Mineral Exploration.</p>
-                    <a href="http://lattes.cnpq.br/6271081753857149" target="_blank"><button>Access my CV</button></a>
+                    <a href="http://lattes.cnpq.br/6271081753857149" target="_blank"><button>Access my CV</button></a> -->
                 </div>
             </div>
         </section>
@@ -308,4 +334,82 @@
     </main>
 </body>
 <script src="./main.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+        var years = document.querySelectorAll('.years')
+        for (let i = 0; i < years.length; i++) {
+            
+            
+        }
+
+        
+        console.log(years);
+        
+        google.charts.load("current", {packages:["corechart"]});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart(inputId) {
+            let arr1 = [['Experiences', 'Years'],
+                        ['CETEM', 2.6],
+                        ['AAPG Marketing', 0.6],
+                        ['Mineralogy Tutor', 0.75],
+                        ['Mineral Identification Extension', 1],
+                        ['AAPG Database', 1.7],
+                        ['MN UFRJ Mineral Curation', 0.4],
+                        ['Structural Geology Tutor', 0.2]]
+            if (inputId == 'yr23') {
+                arr1 = [['Experiences', 'Years'],
+                        ['CETEM', 0.4],
+                        ['AAPG Marketing', 0.25],
+                        ['AAPG Database', 0],
+                        ['Mineralogy Tutor', 0.75],
+                        ['Mineral Identification Extension', 0.5],
+                        ['Mineral Curation', 0]]
+            }
+            else if (inputId == 'yr24') {
+                arr1 = [['Experiences', 'Years'],
+                        ['CETEM', 1.4],
+                        ['AAPG Marketing', 0.6],
+                        ['Mineralogy Tutor', 0.75],
+                        ['Mineral Identification Extension', 1],
+                        ['AAPG Database', 0.7],
+                        ['Mineral Curation', 0]]
+            }
+            else if (inputId == 'yr25') {
+                arr1 = [['Experiences', 'Years'],
+                        ['CETEM', 2.4],
+                        ['AAPG Marketing', 0.6],
+                        ['Mineralogy Tutor', 0.75],
+                        ['Mineral Identification Extension', 1],
+                        ['AAPG Database', 1.7],
+                        ['MN UFRJ Mineral Curation', 0.2],
+                        ['Structural Geology Tutor', 0.2]]
+            }
+            else if (inputId == 'yr26') {
+                arr1 = [['Experiences', 'Years'],
+                        ['CETEM', 2.6],
+                        ['AAPG Marketing', 0.6],
+                        ['Mineralogy Tutor', 0.75],
+                        ['Mineral Identification Extension', 1],
+                        ['AAPG Database', 1.7],
+                        ['MN UFRJ Mineral Curation', 0.4],
+                        ['Structural Geology Tutor', 0.2]]
+            }
+            var data = google.visualization.arrayToDataTable(arr1);
+
+            var options = {
+            title: 'My Daily Activities',
+            pieHole: 0.4,
+            backgroundColor: 'none',
+            chartArea:{left:7,top:7,width:'95%',height:'95%'},
+            legend: 'none',
+            pieSliceText: 'percentage',
+            pieSliceTextStyle: {color: 'white', fontSize: 20},
+            pieSliceBorderColor: 'black'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+            chart.draw(data, options);
+        }
+    </script>
 </html>
