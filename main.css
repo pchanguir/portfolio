@@ -501,7 +501,7 @@ h4{
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
-    height: 100%;
+    height: 200px;
     width: 280px;
 }
 
@@ -566,7 +566,7 @@ textarea:focus::placeholder, #social form input:focus::placeholder{
 
 #ct-info{
     width: 280px;
-    height: 100%;
+    height: 200px;
     display: flex;
     flex-flow: column;
     justify-content: space-evenly;
@@ -679,6 +679,23 @@ textarea:focus::placeholder, #social form input:focus::placeholder{
 }
 
 
+/*---------------- FOOTER ----------------*/
+footer{
+    width: 100%;
+}
+footer #fText{
+    width: 100%;
+    height: 100px;
+    padding-top: 20px;
+    background-color: rgba(29, 29, 29);
+    color: lightgrey;
+    text-align: center;
+}
+footer #gradient{
+    width: 100%;
+    height: 30px;
+    background-image: linear-gradient(to top, rgba(29, 29, 29), rgb(63, 63, 63));
+}
 
 @keyframes btnhover{
     0%{padding-top: 0.1cm;}
