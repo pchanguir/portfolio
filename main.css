@@ -501,7 +501,7 @@ h4{
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
-    height: 200px;
+    height: 250px;
     width: 280px;
 }
 
